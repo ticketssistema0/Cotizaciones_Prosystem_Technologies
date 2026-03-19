@@ -1,0 +1,163 @@
+/* Reutilizamos estilos generales */
+@import "./Home.css";
+
+/* Ajustes específicos para Clientes */
+.clientes-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: #fff;
+
+}
+
+.clientes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.clientes-header h1 {
+  font-size: 1.6rem;
+  color: #000;
+}
+
+.clientes-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.clientes-search {
+  padding: 8px 12px;
+  border: 1px solid #87ceeb;
+  border-radius: 6px;
+  outline: none;
+  background: #b9dbf1; /* gris claro */
+  color: #333;
+}
+
+.btn-agregar {
+  background: #87ceeb;
+  color: #000;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.btn-agregar:hover {
+  background: #5bbce0;
+}
+
+.clientes-table-section {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.clientes-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.clientes-table th,
+.clientes-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  color: #000;
+}
+
+.clientes-table th {
+  background: #f0f8ff;
+  font-weight: bold;
+}
+
+.clientes-table tr:hover {
+  background: #f9fcff;
+}
+
+.btn-editar,
+.btn-eliminar {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 6px;
+  font-size: 0.85rem;
+}
+
+.btn-editar {
+  background: #87ceeb;
+  color: #000;
+}
+
+.btn-editar:hover {
+  background: #5bbce0;
+}
+
+.btn-eliminar {
+  background: #ff4d4d;
+  color: #fff;
+}
+
+.btn-eliminar:hover {
+  background: #e63939;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal input,
+.modal select {
+  padding: 8px;
+  background: #b9dbf1; /* gris claro */
+  color: #333;
+  border: 1px solid #87ceeb;
+  border-radius: 6px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-actions button:first-child {
+  background: #87ceeb;
+  color: #000;
+}
+
+.modal-actions button:last-child {
+  background: #ccc;
+}

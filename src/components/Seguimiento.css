@@ -1,0 +1,398 @@
+/* --- ESTRUCTURA Y CONTENEDOR --- */
+.seguimiento-container {
+  padding: 30px;
+}
+
+.seguimiento-header {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* --- BUSCADOR AZUL CIELO (SKY BLUE) --- */
+.search-box-seguimiento {
+  flex: 1;
+  max-width: 450px;
+  margin-left: 20px;
+}
+
+.input-sky-blue {
+  width: 100%;
+  padding: 12px 10px;
+  border-radius: 25px;
+  border: 2px solid #87ceeb; /* Azul Cielo */
+  background-color: #f0faff; /* Fondo azul tenue */
+  outline: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  color: #000;
+}
+
+.input-sky-blue:focus {
+  border-color: #00bfff;
+  box-shadow: 0 0 10px rgba(135, 206, 235, 0.5);
+  background-color: #fff;
+}
+
+/* --- FILTROS --- */
+.filtros-bar {
+  display: flex;
+  gap: 10px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  width: fit-content;
+}
+
+.btn-filtro {
+  border: none;
+  background: transparent;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #666;
+  transition: all 0.3s;
+}
+
+.btn-filtro.active {
+  background: #1e3c72;
+  color: white;
+}
+
+.btn-rechazada:hover {
+  background-color: #ff4d4d !important;
+  color: white !important;
+}
+
+/* --- LISTA DE PROYECTOS --- */
+.proyectos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.proyecto-item {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.04);
+  transition: transform 0.2s;
+  border-left: 5px solid #1e3c72;
+}
+
+.proyecto-item:hover {
+  transform: translateY(-3px);
+}
+
+.item-rechazado {
+  border-left-color: #ff4d4d;
+  opacity: 0.9;
+}
+
+/* --- INFO Y BADGES --- */
+.proyecto-info {
+  flex: 1;
+}
+
+.badge {
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.badge.Pendiente { background: #e0e0e0; color: #666; }
+.badge.En\ Proceso { background: #fff3cd; color: #856404; }
+.badge.Por\ Cobrar { background: #f8d7da; color: #721c24; }
+.badge.Finalizado { background: #d4edda; color: #155724; }
+.badge.Rechazada { background: #ff4d4d; color: white; }
+
+.proyecto-info h3 {
+  margin: 5px 0;
+  color: #1e3c72;
+}
+
+.servicio-tag {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.fecha-tag {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* --- STEPS / TIMELINE --- */
+.proyecto-progreso {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  padding: 0 40px;
+}
+
+.step-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+}
+
+.step-container::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #eee;
+  z-index: 1;
+}
+
+.step {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  filter: grayscale(1);
+  opacity: 0.4;
+}
+
+.step.completed {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.step .circle {
+  width: 32px;
+  height: 32px;
+  background: #1e3c72;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.8rem;
+  border: 4px solid #fff;
+}
+
+.step span {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #1e3c72;
+}
+
+.rechazada-msg {
+  color: #ff4d4d;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* --- ACCIONES (BOTONES Y SELECTOR) --- */
+.proyecto-acciones-final {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.btn-ver-mas {
+  background: #ffffff;
+  color: #000000; /* Letras Negras */
+  border: 2px solid #87ceeb;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-ver-mas:hover {
+  background: #87ceeb;
+  color: white;
+}
+
+.update-status-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 160px;
+}
+
+.update-status-box label {
+  font-size: 0.7rem;
+  color: #000; /* Letras Negras */
+  font-weight: bold;
+}
+
+.select-status-modern {
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid #eee;
+  background: #f9f9f9;
+  font-weight: bold;
+  color: #000; /* Letras Negras */
+  cursor: pointer;
+  width: 100%;
+}
+
+.monto {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+/* --- MODAL DE DETALLES --- */
+.detail-project-modal {
+  max-width: 550px !important;
+  border-radius: 20px !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.modal-detail-header {
+  background: #87ceeb;
+  padding: 20px;
+  color: #000; /* Letras Negras */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-x {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.detail-body {
+  padding: 25px;
+}
+
+.detail-row {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 5px;
+  color: #333;
+}
+
+.products-mini-list {
+  background: #f0faff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.mini-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.btn-cerrar-modal {
+  width: 100%;
+  padding: 15px;
+  background: #1e3c72;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+}
+
+/* Contenedor para alinear buscador y calendario */
+.search-group-seguimiento {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.date-box-seguimiento {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-date-sky {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 2px solid #87ceeb;
+  background: white;
+  color: #1e3c72;
+  font-weight: bold;
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.input-date-sky:focus {
+  border-color: #1e3c72;
+  box-shadow: 0 0 8px rgba(135, 206, 235, 0.4);
+}
+
+/* Botón para limpiar la fecha rápido */
+.btn-clear-date {
+  position: absolute;
+  right: -25px;
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.no-results {
+  text-align: center;
+  padding: 50px;
+  color: #666;
+  font-style: italic;
+  background: white;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+/* Ajuste responsive para que no se amontonen en móviles */
+@media (max-width: 768px) {
+  .header-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .search-group-seguimiento {
+    width: 100%;
+    flex-direction: column;
+  }
+  .search-box-seguimiento, .input-date-sky {
+    width: 100%;
+  }
+}

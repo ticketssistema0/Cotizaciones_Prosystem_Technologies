@@ -1,0 +1,86 @@
+.config-container {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.config-card {
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  width: 100%;
+  max-width: 800px;
+}
+
+.config-card h2 {
+  color: #1e3c72;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #888;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.input-group label {
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.input-group input, .input-group textarea {
+  padding: 12px;
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+  border-color: #87ceeb;
+}
+
+.btn-guardar-config {
+  margin-top: 30px;
+  background: #1e3c72;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.btn-guardar-config:hover {
+  background: #2a5298;
+}
+
+.mensaje-alerta {
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  background: #d4edda;
+  color: #155724;
+}

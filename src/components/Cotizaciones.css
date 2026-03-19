@@ -1,0 +1,378 @@
+/* --- ESTRUCTURA PRINCIPAL (LAYOUT) --- */
+.home-container {
+  display: flex;
+  height: 100vh; /* Ocupa el alto total de la pantalla */
+  overflow: hidden; /* Evita que toda la página se desplace */
+}
+
+/* Barra lateral moderna y FIJA */
+.sidebar {
+  width: 260px;
+  background: #ffffff;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  border-right: 10px solid #87ceeb; /* Tu color azul cielo */
+  border-radius: 0 75px 75px 0;
+  height: 100%;
+  flex-shrink: 0; /* Evita que se encoja */
+  z-index: 100;
+}
+
+/* Contenido principal con SCROLL INDEPENDIENTE */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+  overflow-y: auto; /* Solo esta parte se desplaza */
+  height: 100vh;
+}
+
+/* --- LOGO Y NAVEGACIÓN --- */
+.logo-container {
+  padding: 30px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.logo-img {
+  max-width: 160px;
+  height: auto;
+}
+
+.sidebar nav {
+  flex: 1;
+  padding: 20px 0;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  padding: 12px 25px;
+  margin: 6px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar nav ul li:hover {
+  background: #87ceeb;
+  transform: translateX(5px);
+}
+
+/* --- BARRA SUPERIOR (TOPBAR) --- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #87ceeb;
+  padding: 15px 25px;
+  border-bottom: 2px solid #fff;
+  border-radius: 0 0 35px 35px;
+  color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.profile {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* --- SECCIÓN DE CONTENIDO --- */
+.cotizaciones-container {
+  padding: 30px;
+}
+
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-actions h1 {
+  font-size: 1.8rem;
+  color: #1e3c72;
+}
+
+/* --- TABLA --- */
+.cotizaciones-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cotizaciones-table th {
+  background: #1e3c72;
+  color: #fff;
+  padding: 15px;
+  text-align: left;
+}
+
+.cotizaciones-table td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+/* --- BOTONES --- */
+.btn-group {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-open-modal {
+  background: #1e3c72;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-edit {
+  background: #f0ad4e;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-pdf {
+  background: #5cb85c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-eliminar {
+  background: #d9534f;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* --- MODAL --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(65, 65, 65, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 500px;
+  border: 4px solid #87ceeb;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: #6595ed;
+  text-align: center;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-content label {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.modal-content select, 
+.modal-content input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+    background: #6595ed;
+
+  font-size: 1rem;
+}
+
+/* Listado de productos dentro del modal */
+.lista-productos-temporal {
+  background: #f0f8ff;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #87ceeb;
+}
+
+.producto-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background: #fff;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.item-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.item-controls input {
+  width: 60px !important;
+  text-align: center;
+  padding: 4px !important;
+}
+
+.btn-remove-item {
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.total-preview {
+  background: #4984f1;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: right;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-cancelar {
+  background: #ccc;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-guardar {
+  background: #1e3c72;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-container {
+  flex: 1;
+  margin: 0 30px; /* Espacio entre el título y el botón */
+  max-width: 400px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #87ceeb;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+  background-color: #87ceeb;
+}
+
+.search-input:focus {
+  border-color: #1e3c72;
+  box-shadow: 0 0 8px rgba(135, 206, 235, 0.4);
+}
+
+.modal-confirm {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  border: 3px solid #ff4d4d; /* Rojo para advertencia */
+  animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.icon-warning {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.modal-confirm h3 {
+  color: #1e3c72;
+  margin-bottom: 10px;
+}
+
+.modal-confirm p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-confirm-delete {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-confirm-delete:hover {
+  background: #cc0000;
+}

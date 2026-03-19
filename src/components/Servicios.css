@@ -1,0 +1,362 @@
+/* --- TUS ESTILOS ORIGINALES (NO TOCAR) --- */
+.servicios-container { flex: 1; display: flex; flex-direction: column; padding: 20px; background: #fff; }
+.servicios-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.servicios-header h1 { font-size: 1.6rem; color: #000; }
+.btn-agregar { background: #87ceeb; color: #000; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-weight: 500; transition: background 0.3s; }
+.servicios-table { width: 100%; border-collapse: collapse; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+.servicios-table th { background: #f0f8ff; font-weight: bold; padding: 12px; border-bottom: 1px solid #eee; text-align: left; }
+.servicios-table td { padding: 12px; border-bottom: 1px solid #eee; text-align: left; }
+.btn-editar { background: #87ceeb; color: #000; border: none; padding: 6px 10px; border-radius: 5px; cursor: pointer; margin-right: 6px; }
+.btn-eliminar { background: #ff4d4d; color: #fff; border: none; padding: 6px 10px; border-radius: 5px; cursor: pointer; }
+
+/* --- NUEVOS ESTILOS EXCLUSIVOS DEL MODAL --- */
+.modal-overlay {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  background: rgba(0,0,0,0.4); 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-horizontal {
+  width: 750px; 
+  max-width: 90%;
+  background: #fff;
+  padding: 30px 40px; 
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.modal-horizontal h2 {
+  margin: 0 0 10px 0;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.modal-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px 30px; 
+  text-align: left;
+  padding: 5px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.full-width {
+  grid-column: span 2; 
+}
+
+.modal input, 
+.modal textarea, 
+.modal select {
+  padding: 10px;
+  border: 1px solid #87ceeb;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box; 
+  font-family: inherit;
+  background-color: #f0faff; 
+  color: #000000;
+}
+
+.image-selection-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fdfdfd;
+  padding: 10px;
+  border: 1px dashed #87ceeb;
+  border-radius: 8px;
+}
+
+.preview-box {
+  width: 70px;
+  height: 70px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #fff;
+}
+
+.img-contain {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+/* --- ESTILO PARA FIJAR LA BARRA LATERAL --- */
+.home-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden; /* Evita que el contenedor padre haga scroll */
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-right: 1px solid #eee;
+  flex-shrink: 0; /* No permite que la sidebar se encoja */
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto; /* Permite scroll solo en el contenido derecho */
+  height: 100vh;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- ESTILOS DE TARJETAS (TIENDA EN LÍNEA) --- */
+.categoria-titulo {
+  margin: 30px 0 15px;
+  color: #333;
+  font-size: 1.4rem;
+  border-left: 5px solid #87ceeb;
+  padding-left: 15px;
+  text-align: left;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+  padding-bottom: 40px;
+}
+
+.producto-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #eee;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.card-image-container {
+  width: 100%;
+  height: 180px;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.card-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.no-image {
+  color: #bbb;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.card-info {
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.card-nombre {
+  margin: 0;
+  font-size: 1rem;
+  color: #222;
+  font-weight: 600;
+}
+
+.card-precio {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.btn-detalles {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  margin-top: auto;
+  transition: background 0.2s;
+}
+
+.btn-detalles:hover {
+  background: #333;
+}
+
+/* --- MODAL DE DETALLES --- */
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  text-align: left;
+}
+
+.detail-img-container {
+  background: #f9f9f9;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+}
+
+.detail-img-large {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.detail-info h3 { margin-top: 0; font-size: 1.5rem; }
+
+.detail-price {
+  font-size: 1.8rem;
+  color: #27ae60;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.detail-description {
+  color: #555;
+  line-height: 1.5;
+  background: #fcfcfc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.status-activo { color: #27ae60; font-weight: bold; }
+.status-inactivo { color: #e74c3c; font-weight: bold; }
+
+.tipo-selection-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.new-type-input {
+  display: flex;
+  gap: 5px;
+}
+
+.new-type-input input {
+  flex: 1;
+  font-size: 0.8rem;
+  padding: 5px;
+}
+
+.new-type-input button {
+  background-color: #87ceeb; /* Tu azul cielo */
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+
+.modal-confirm {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  border: 3px solid #ff4d4d; /* Rojo para advertencia */
+  animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.icon-warning {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.modal-confirm h3 {
+  color: #1e3c72;
+  margin-bottom: 10px;
+}
+
+.modal-confirm p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-confirm-delete {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-confirm-delete:hover {
+  background: #cc0000;
+}
